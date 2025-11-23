@@ -1,5 +1,6 @@
-import { Activity } from "lucide-react";
+import { Activity, Waves } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export function AppHeader() {
   return (
@@ -10,6 +11,17 @@ export function AppHeader() {
           SensorViz Pro
         </h1>
       </Link>
+      <nav className="flex items-center gap-4 ml-auto">
+        <Button variant="ghost" asChild>
+          <Link href="/">Sensor Dashboard</Link>
+        </Button>
+        <Button variant="ghost" asChild>
+          <Link href="/noise" className="flex items-center gap-2">
+            <Waves className="w-4 h-4" />
+            Noise Analysis
+          </Link>
+        </Button>
+      </nav>
     </header>
   );
 }
